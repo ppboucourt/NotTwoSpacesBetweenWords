@@ -1,0 +1,25 @@
+<html>
+<header>
+<script>
+	function validarDobleEspacioBlanco(field,event) {
+	try {
+		var index = field.value.lastIndexOf("  ");
+		alert("index"+index);
+	    if(index != -1){
+	      field.value = field.value.trim() + field.value.charAt(field.value.length - 1);
+	      alert("Si valid text: " + field.value);  
+	    }else{
+	      field.value = field.value;
+	      alert("No valid text: " + field );  
+	    } 
+	    return true;
+	} catch (e) {
+		return true;
+	}
+	}
+</script>
+</header>
+<body>
+	<input onkeypress="validarDobleEspacioBlanco(this,event);">
+</body>
+</html>
